@@ -7,9 +7,10 @@ export default function validateAuth(values) {
     errors.email = '유효하지 않은 이메일입니다';
   }
   // 비밀번호 에러 처리
-  if (!values.email && !values.password) {
+ /* if (values.email && !values.password) {
     errors.password = '비밀번호를 입력해주세요';
-  } else if (!values.email && values.password.length < 8) {
+  } else  */ 
+  if (values.email && values.password.length < 8) {
     errors.password = '비밀번호는 최소 8자 이상이어야 합니다';
   }
   return errors;

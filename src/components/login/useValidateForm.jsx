@@ -8,21 +8,17 @@ const useValidateForm = (initialState, validate) => {
   useEffect(
     () => {
       if (isSubmitted) {
+        //noErrors 함수가 있어야 
         const noErrors = Object.keys(errors).length === 0;
+        // 비밀번호 맞았을 때 
         if (noErrors) {
-          alert(`잘되네유 ${values.email}`);
-          console.log(`잘되네유... ${values.email}, ${values.password}`);
+          alert(`${values.email}로 로그인 성공`);
+          console.log(`login success! ${values.email}, ${values.password}`);
           setSubmitted(false);
-          // 로그인 이벤트 수행되어야
         }
-        /*  if (!${values.email} and ${values.password} 가
-          correspond하지 않을 때) {
-          alert('입력을 제대로 해 주세유');
-        } */
-      }
-    },
-    [errors, values.email, isSubmitted, values.password],
-  );
+      }  
+    },[errors, isSubmitted, values.email, values.password]
+);
 
   function handleChange(e) {
     setValues({
@@ -38,9 +34,20 @@ const useValidateForm = (initialState, validate) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // validate -> 유효성 검사로 넘어가긴
     const validationErrors = validate(values);
     setErrors(validationErrors);
     setSubmitted(true);
+  }
+
+  const onFacebookBtn = (e) => {
+    alert('FaceBook Login');
+    console.log('FaceBook SignUp');
+  }
+  
+  const onNaverBtn = (e) => {
+    alert('Naver Login');
+    console.log("Naver SignUp");
   }
 
   return {
@@ -50,6 +57,8 @@ const useValidateForm = (initialState, validate) => {
     values,
     errors,
     isSubmitted,
+    onNaverBtn,
+    onFacebookBtn, 
   };
 };
 

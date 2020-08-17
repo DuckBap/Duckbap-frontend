@@ -116,14 +116,14 @@ export const ForgotPassword = styled.a`
 `;
 
 export const StyledText = styled.div`
-  font-size: 13px;
+  font-size: 12px;
   text-align: left;
   text-decoration: none;
   margin-left: 7px;
 `;
 
 export const StyledText1 = styled.div`
-  font-size: 13px;
+  font-size: 12px;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
