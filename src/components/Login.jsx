@@ -40,7 +40,6 @@ const Login = () => {
             <Btn className="login-naver" color="naver" onClick={onNaverBtn}>
               네이버 계정으로 로그인하기
             </Btn>
-            {/* 엔터키로 로그인 버튼 누르는 기능 가능하게 만듦 */} 
             <form onSubmit={handleSubmit}> 
               <StyledText1 className="text1">또는</StyledText1>
               <div className="email-input">

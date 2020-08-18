@@ -8,15 +8,14 @@ const useValidateForm = (initialState, validate) => {
   useEffect(
     () => {
       if (isSubmitted) {
-        //noErrors 함수가 있어야 
         const noErrors = Object.keys(errors).length === 0;
         // 비밀번호 맞았을 때 
-        if (noErrors) {
+        if (noErrors /* &&  */) {
           alert(`${values.email}로 로그인 성공`);
           console.log(`login success! ${values.email}, ${values.password}`);
           setSubmitted(false);
         }
-      }  
+      }
     },[errors, isSubmitted, values.email, values.password]
 );
 
