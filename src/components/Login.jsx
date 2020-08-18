@@ -21,8 +21,6 @@ const Login = () => {
   const STATE_INIT = {
     email: '',
     password: '',
-    storedemail: '',
-    storedpassword: '',
   };
 
   const {
@@ -31,8 +29,7 @@ const Login = () => {
     STATE_INIT,
     validateAuth,
   );
-  values.storedemail = 'doggo@42.kr';
-  values.storedpassword = 'doggo';
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -45,8 +42,9 @@ const Login = () => {
             </Btn>
             {/* 엔터키로 로그인 버튼 누르는 기능 가능하게 만듦 */} 
             <form onSubmit={handleSubmit}> 
-            <StyledText1>또는</StyledText1>
-            <Input
+            <StyledText1 className="text1">또는</StyledText1>
+            <div className="emailInput">
+              <Input
               type="text"
               placeholder="이메일 주소 입력"
               onChange={handleChange}
@@ -57,6 +55,8 @@ const Login = () => {
               value={values.email}
             />
             {errors.email && <ErrorText>{errors.email}</ErrorText>}
+            </div>
+            <div className="passwordInput">
             <Input
               type="text"
               placeholder="비밀번호 입력"
@@ -68,16 +68,20 @@ const Login = () => {
               value={values.password}
             />
             {errors.password && <ErrorText>{errors.password}</ErrorText>}
+            </div>
             <Space />
             <Btn type="submit" className="login" color="login" /* onClick={handleSubmit} */ disabled={isSubmitted}>로그인</Btn>
              </form>
             <Space />
             <StyledText>아직 계정이 없으신가요?</StyledText>
-            <Signup href="/sign-up"><StyledText1>덕질이 밥먹여준다 가입하기</StyledText1></Signup>
+            <div className="registration"><Signup href="/sign-up"><StyledText1>덕질이 밥먹여준다 가입하기</StyledText1></Signup>
+            </div>
             <Line />
-            <StyledText>
+            <div>
+              <StyledText>
               <ForgotPassword href="/sign-up"><StyledText1>혹시 비밀번호를 잊으셨나요?</StyledText1></ForgotPassword>
             </StyledText>
+            </div>
         </Wrapper>
       </Container>
     </ThemeProvider>
