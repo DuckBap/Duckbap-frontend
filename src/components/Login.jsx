@@ -58,7 +58,7 @@ const Login = () => {
               </div>
               <div className="password-input">
                 <Input
-                  type="text"
+                  type="password"
                   placeholder="비밀번호 입력"
                   onChange={handleChange}
                   onBlur={handleBlur}
