@@ -1,0 +1,19 @@
+{
+    "funding": {
+      "id": 1,
+      "sellerName": "yujo",
+      "fundName": "Wendy_Mirror",
+      "price": "123,000",
+      "targetAmount": 100,
+      "salesAmount": 1500,
+      "startDate": "2020-08-10T00:00:00+09:00",
+      "endDate": "2020-08-12T00:00:00+09:00",
+      "artistName": "BTS",
+      "achievementRate": 300,
+      "dDay": 2,
+      "fundingImgUrls": "http://image.yes24.com/goods/59190821/800x0",
+      "detailedImgUrl": "http://image.yes24.com/momo/TopCate1800/MidCate001/179903035.jpg"
+    },
+    "msg": "get funding"
+  }
+  

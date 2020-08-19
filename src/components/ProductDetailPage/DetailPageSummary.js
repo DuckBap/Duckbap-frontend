@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import example from '../example.json';
+import example from './example.json'
 
 const SummaryBox = styled.div`
   width: 100vw;
