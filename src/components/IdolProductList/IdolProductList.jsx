@@ -1,11 +1,11 @@
 import React from 'react';
-import IdolProductItem from './IdolProductItem';
-import { IdolProductLists } from './style-idolProductList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
+import IdolProductItem from './IdolProductItem';
+import { IdolProductLists, SortBtnContainer, SortBtn } from './style-idolProductList';
 // 무한스크롤? 페이지네이션?
 export default function IdolProductList() {
-  let items = [
+  const items = [
     {
       id: 1,
       sellerName: 'seller1',
@@ -69,11 +69,12 @@ export default function IdolProductList() {
 
   return (
     <IdolProductLists>
-      <div className="sort-btn-container">
-        <span className="sort-btn">
-          인기순 <FontAwesomeIcon icon={faSortDown} />
-        </span>
-      </div>
+      <SortBtnContainer>
+        <SortBtn>
+          인기순
+          <FontAwesomeIcon icon={faSortDown} />
+        </SortBtn>
+      </SortBtnContainer>
       {items.map((item) => (
         <IdolProductItem key={item.id} item={item} />
       ))}
