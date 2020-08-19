@@ -1,11 +1,15 @@
 .slick-prev {
-    left: 10% !important;
-    z-index: 1;
-    bottom: 50% !important;
+  left: 10% !important;
+  z-index: 1;
+  bottom: 50% !important;
+}
+.slick-next {
+  right: 10% !important;
+  z-index: 1;
+  bottom: 50% !important;
+}
 
-  }
-  .slick-next {
-    right: 10% !important;
-    z-index: 1;
-    bottom: 50% !important;
-  }
+.slick-dots li button:before
+{
+  color:orange !important;
+}
