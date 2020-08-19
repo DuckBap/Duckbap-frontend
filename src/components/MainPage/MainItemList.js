@@ -1,6 +1,7 @@
 import React, {useRef, useEffect, useState} from "react";
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import axios from "axios";
+import { Goods,GoodsImgWrapper, GoodsImg, Item, TwoItems, GoodsContentWrapper } from './style-itemlist';
 
 function useHover() {  
     const ref = useRef();
@@ -170,81 +171,6 @@ const [data, loading] = useFetch(
       })
       oReq.send();
     } */
-    const Goods = styled.div`    
-    text-align:center;
-    width: 23%;
-    display:inline;
-    margin-left:2%;
-    min-height: 40vh
-    max-height:40vh
-`
-
-     const GoodsImgWrapper = styled.div`
-
-    width: 100%;
-    height: 50%;
-    max-width: 100%;
-    max-height: 50%;
-    overflow: hidden;
-    align: center;
-    display:inline-block;
-`
-
-     const GoodsImg = styled.img`
-    height: 100%;
-    width: 100%;
-    max-height: 100%;
-    max-width: 100%;
-    border-radius:3%;
-`
-
-     const Item = styled.span`
-
-    display: flex;
-    margin-top: 1%;
-    margin-bottom: 1%;
-
-    &.userName {
-        color: gray;
-        font-size: 80%;
-
-    }
-
-    &.dDay {
-        color:gray;
-        font-size: 80%;
-    }
-
-    &.name {
-        text-align: left;
-        color: black;
-        font-size: 120%;
-        max-width: inherit;
-        cursor: pointer;
-
-    }
-
-
-    &.achievementRate {
-        margin-top:5%;
-        color: red;
-
-    }
-`
-
- const TwoItems = styled.div`
-    display: flex;
-    justify-content: flex-start;
-    
-`
-
- const GoodsContentWrapper = styled.div`
-    padding-top: 5%;
-    width: 100%;
-    max-width: 100%;
-    height: 50%;
-    display:inline-block;
-`
 
 
 
