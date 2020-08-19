@@ -1,8 +1,10 @@
 import React from 'react';
 import EnterListItem from './EnterListItem';
-import { EnterpriseLists, EnterpriseListHeader } from './style-enterpriseList.js';
+//import { EnterpriseLists, EnterpriseListHeader } from './style-enterpriseList.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { EnterpriseLists, EnterpriseListHeader } from './style-idolList.js';
+
 
 export default function EnterpriseList() {
   let listOf10 = [
