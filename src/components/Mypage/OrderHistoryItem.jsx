@@ -7,7 +7,7 @@ const OrderHistoryItem = ({ img, title, content }) => {
     <OrderHistoryCard>
       <img src={img} alt="goods" />
       <div>
-        <h3>{title}</h3>
+        <goodsname>{title}</goodsname>
         <span>{content}</span>
       </div>
     </OrderHistoryCard>
