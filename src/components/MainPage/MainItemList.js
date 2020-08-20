@@ -209,13 +209,12 @@ getMovies();
     //  const template = jsonData.map((item, index) => (
     return (
     <Goods>
-
         <GoodsImgWrapper>
             <GoodsImg {...Hover} src={item.mainImgUrl} alt={item.name} title={item.name} />
         </GoodsImgWrapper>
         <GoodsContentWrapper>
             <TwoItems>
-                <Item className="userName">{item.id} | &nbsp;</Item>
+                <Item className="userName">{item.userName} | &nbsp;</Item>
                 <Item className="dDay">{item.dDay * -1} 일 남음</Item>
             </TwoItems>
             <Item className="name">{item.name}</Item>
