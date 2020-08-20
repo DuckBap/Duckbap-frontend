@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+export const IdoListContainer = styled.div`
+
+`;
 export const IdolProductItems = styled.div`
   display: flex;
   width: 96%;

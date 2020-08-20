@@ -1,5 +1,5 @@
 import React from 'react';
-import { IdolLists } from './style-idolList.js';
+import { IdolLists } from './style';
 
 export default function IdolList() {
   let idolList = [
