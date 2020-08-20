@@ -4,7 +4,7 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 import {
   IdolProductItems, ProductImgContainer, ProductImg,
   TextContainer, FundingHeader, Span, HorizontalLine,
-  AchievementRateBar, FundingStatus
+  AchievementRateBar, FundingStatus,
 } from './style-idolProductItem';
 
 export default function IdolProductItem({ item }) {

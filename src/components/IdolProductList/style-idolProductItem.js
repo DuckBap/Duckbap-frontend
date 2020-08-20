@@ -11,55 +11,36 @@ export const IdolProductItems = styled.div`
 `;
 
 export const TextContainer = styled.div`
-    width: 60%;
+  width: 60%;
 `;
 
 export const ProductImgContainer = styled.div`
   overflow: hidden;
-    min-width: 300px;
-    min-height: 200px;
-    width: 300px;
-    height: 200px;
-    margin-right: 50px;
-    border-radius: 16px;
+  min-width: 300px;
+  min-height: 200px;
+  width: 300px;
+  height: 200px;
+  margin-right: 50px;
+  border-radius: 8px;
 `;
 
 export const ProductImg = styled.img`
-    overflow: hidden;
-    min-width: 300px;
-    min-height: 200px;
-    width: 300px;
-    height: 200px;
-    margin-right: 50px;
+  overflow: hidden;
+  min-width: 300px;
+  min-height: 200px;
+  width: 300px;
+  height: 200px;
+  margin-right: 50px;
 
-    object-fit: cover;
+  object-fit: cover;
   &:hover {
     transition: 0.2s ease-in;
     transform: scale(1.1);
+  }
 `;
 
 export const Span = styled.span`
-    display: inline-block;
-    &.d-day {
-      /* display: block; */
-      color: rgb(158, 158, 158);
-      font-size: 16px;
-    }
-  
-    &.d-day > span {
-      margin-left: 4px;
-    }
-
-    &.achievement-rate {
-      color: rgb(61, 61, 61);
-      font-weight: 600;
-    }
-  
-    &.achievement-rate-value {
-      color: rgb(255, 120, 120);
-      font-weight: 700;
-      font-size: 20px;
-    }
+  display: inline-block;
 
   &.funding-name {
     padding: 10px 0;
@@ -83,18 +64,44 @@ export const Span = styled.span`
 
   &.description {
     display: block;
+    height: 50px;
+    color: rgb(100, 100, 100);
+    font-weight: 400;
     box-sizing: border-box;
-    padding: 10px 6px 40px;
+    margin-bottom: 20px;
+    // padding: 10px 0px 29px;
+  }
+
+  &.achievement-rate {
+    color: rgb(61, 61, 61);
+    font-weight: 600;
+  }
+
+  &.achievement-rate-value {
+    // color: rgb(61, 61, 61);
+    color: #ffb61a;
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  &.d-day {
+    /* display: block; */
+    color: rgb(158, 158, 158);
+    font-size: 16px;
+  }
+
+  &.d-day > span {
+    margin-left: 4px;
   }
 `;
 
 export const AchievementRateBar = styled.div`
     position: relative;
-    height: 2px;
+    height: 4px;
     margin-bottom: 30px;
 
     &.foreground {
-    background: rgb(255, 120, 120);
+    background: #ffb61a;
     position: absolute;
     height: 100%;
     z-index: 2;
