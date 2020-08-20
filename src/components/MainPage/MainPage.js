@@ -18,18 +18,20 @@ function LoadMoreHandler(data) {
 function MainPage() {
 
   const [jsonData, setjsonData] = useState([]);
-  const [pagenum, setPageNum] = useState(1);
+  const [pagenum, setPageNum] = useState(0);
+  const arrayForHoldingPosts = [];
   const elem = useRef();
-
+  
   async function fetchUrl(pagenum) {
-    await axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${pagenum}`/*`fundings/main?page=${pagenum}`*/).then(response => {
-      setjsonData(response.data);
+    await axios.get(`fundings/main?page=${pagenum}`/*`https://jsonplaceholder.typicode.com/comments?postId=${pagenum}`*/).then(response => {
+    const arrayForHoldingPosts=[...jsonData, ...response.data];
+    setjsonData(arrayForHoldingPosts);
     });}
-
+  
     useEffect(() => {
       fetchUrl(pagenum);
       console.log(pagenum);
-      console.log(jsonData);
+      console.log(arrayForHoldingPosts);
       console.log(Object.keys(jsonData).length);
       if (pagenum > 1 && Object.keys(jsonData).length < 8)
       {
@@ -37,7 +39,12 @@ function MainPage() {
         current.style.display = 'none';
       }
     }, [pagenum]);
-  
+
+
+    useEffect(() => {
+      setPageNum(pagenum + 1);
+    }, []);
+
   //  <body style="margin: 0 0 0 0">
 
   /*
@@ -67,7 +74,11 @@ function MainPage() {
       <Wrapper>
         <SortBy>주목할 만한 프로젝트</SortBy>
         <GoodsColumns>
-        <MainItemList />
+         {
+        jsonData.map((item) => (
+          <MainItemList item={item} />
+          ))
+        }
         </GoodsColumns>
         <LoadMore ref={elem} onClick = {() => setPageNum(pagenum + 1)}>더 많은 굿즈 보기</LoadMore>
         <br />
