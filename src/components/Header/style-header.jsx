@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import EnterpriseList from '../IdolList/EnterpriseList'
+import EnterpriseList from '../IdolList/EnterpriseList';
+import ProfileImg from './Profile.png';
+import SearchImg from './Search.png';
 
 export const Logostyle = styled.div`
 	align-items: center;
@@ -55,7 +57,7 @@ export const PopupMenu = ({ open }) => {
 } 
 
 const HeaderButton = styled.button`
-	margin: 15px;
+	  margin-left: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -106,3 +108,17 @@ export const ToggleButton = () => {
     </div>
   )
 }
+
+export const SearchBtn = styled.img.attrs({
+  src: SearchImg,
+})`
+  position: absolute;
+  right: 4.5%;
+`;
+
+export const LoginBtn = styled.img.attrs({
+  src: ProfileImg,
+})`
+  position: absolute;
+  right: 1%;
+`;

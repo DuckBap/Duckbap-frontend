@@ -2,7 +2,9 @@ import React from 'react';
 import { Headerstyle,
   ToggleButton,
   Logostyle,
- } from './style'
+  SearchBtn,
+  LoginBtn,
+ } from './style-header'
 
 function Header() {
   return (
@@ -14,6 +16,8 @@ function Header() {
         />
       </Logostyle>
       <ToggleButton />
+      <SearchBtn />
+      <LoginBtn />
     </Headerstyle>
   );
 }
