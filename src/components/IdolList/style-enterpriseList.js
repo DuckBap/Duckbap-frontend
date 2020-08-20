@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+/*
 export const EnterpriseLists = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,3 +31,4 @@ export const EnterpriseListHeader = styled.div`
     cursor: pointer;
   }
 `;
+*/

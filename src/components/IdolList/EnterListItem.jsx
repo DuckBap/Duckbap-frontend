@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import IdolList from './IdolList';
 //import { EnterListItems } from './style-enterListItem.js';
-import { EnterListItems } from './style-idolList.js';
+import { EnterListItems } from './style';
 
 
 export default function EnterListItem({ enterprise }) {
