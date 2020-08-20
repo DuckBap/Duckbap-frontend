@@ -1,7 +1,22 @@
 import React, {useRef, useEffect, useState} from "react";
-//import styled from 'styled-components';
 import axios from "axios";
+//import styled from 'styled-components';
 import { Goods,GoodsImgWrapper, GoodsImg, Item, TwoItems, GoodsContentWrapper } from './style-itemlist';
+
+
+/*
+function useFetch(url) {
+  const [data, setData] = useState([]);
+  async function fetchUrl() {
+    await axios.get(url).then(response => {
+     setData(response.data.data);
+    });
+  }
+  useEffect(() => {
+    fetchUrl();
+  }, []);
+  return [data];
+}*/
 
 function useHover() {  
     const ref = useRef();
@@ -35,21 +50,7 @@ function useHover() {
   }
 
 
-  function useFetch(url) {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    async function fetchUrl() {
-      await axios.get(url).then(response => {
-       setData(response.data.data);
-      });
-    }
-    useEffect(() => {
-      fetchUrl();
-    }, []);
-    return [data, loading];
-  }
-
-const MainItemListEven = () => {
+const MainItemList = ( {item} ) => {
     
     const jsonData = [
         {
@@ -106,7 +107,7 @@ const MainItemListEven = () => {
               "http://img.khan.co.kr/news/2020/08/09/l_2020080901000887600068091.jpg",
         },
         {
-            id: 3,
+            id: 5,
             userName: "최강훈",
             name: "HAPPY MENTAL 언니의 해피 쏭 러브 포엠 낭독극",
             dDay: -4,
@@ -115,7 +116,7 @@ const MainItemListEven = () => {
               "https://img.lovepik.com/original_origin_pic/18/04/12/62d08b0e07749561f0e564beae0e8b33.png_wh300.png!/both/154x106",
         },
         {
-            id: 3,
+            id: 6,
             userName: "최강훈",
             name: "HAPPY MENTAL 언니의 해피 쏭 러브 포엠 낭독극",
             dDay: -4,
@@ -124,7 +125,7 @@ const MainItemListEven = () => {
               "https://img.lovepik.com/original_origin_pic/18/04/12/62d08b0e07749561f0e564beae0e8b33.png_wh300.png!/both/154x106",
         },
         {
-            id: 3,
+            id: 7,
             userName: "최강훈",
             name: "HAPPY MENTAL 언니의 해피 쏭 러브 포엠 낭독극",
             dDay: -4,
@@ -150,17 +151,30 @@ const MainItemListEven = () => {
     };
     getMovies();
     // list-style-type 은 ul태그의 점을 관리.
-*/
-const [data, loading] = useFetch(
-    "https://yts-proxy.now.sh/list_movies.json"
-  );
+  */
 
+
+ /*
+  const [movies, setmovies] = useState();
+
+  const getMovies = async () => {
+    const {
+      data: {
+        data: { movies }
+      }
+    } = await axios.get(
+      "https://yts-proxy.now.sh/list_movies.json" 
+    );
+    setmovies(movies);
+}
+getMovies();
+ // 콘솔로그용
   useEffect(
     () => {
-      console.log(data);
+      console.log(movies);
     },
-    [data]
-  );/*
+    [movies]
+  );
 
 
     const ajaxJson = async () => {
@@ -172,11 +186,29 @@ const [data, loading] = useFetch(
       oReq.send();
     } */
 
-
-
     const Hover = useHover();
-    const template = jsonData.map((item, index) => (
-    <Goods> 
+    /*
+    //서버가 안 열려있을 때 사용한 디버깅용 함수입니다
+   if (item)
+    return (
+      <Goods>
+        <GoodsImgWrapper>
+        </GoodsImgWrapper>
+        <GoodsContentWrapper>
+            <TwoItems>
+                <Item className="userName">{item.name} | &nbsp;</Item>
+                <Item className="dDay">{item.name * -1} 일 남음</Item>
+            </TwoItems>
+            <Item  {...Hover}className="name">{item.name}</Item>
+            <Item className="achievementRate">{item.name}% 달성</Item>
+        </GoodsContentWrapper>
+    </Goods>
+    );*/
+  
+
+    //  const template = jsonData.map((item, index) => (
+    return (
+    <Goods>
         <GoodsImgWrapper>
             <GoodsImg {...Hover} src={item.mainImgUrl} alt={item.name} title={item.name} />
         </GoodsImgWrapper>
@@ -189,12 +221,11 @@ const [data, loading] = useFetch(
             <Item className="achievementRate">{item.achievementRate}% 달성</Item>
         </GoodsContentWrapper>
     </Goods>
-    ));
-
-    return template;
+    )
+//  return template;
 }
 
-export default MainItemListEven;
+export default MainItemList;
 
 
 
