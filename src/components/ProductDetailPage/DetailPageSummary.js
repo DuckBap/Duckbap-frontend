@@ -4,38 +4,46 @@ import example from './example.json'
 
 const SummaryBox = styled.div`
   width: 100vw;
-  height: 35vh;
-  background: #f6f5f5;
+  height: 70vh;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items:center;
 `;
 
 const SummaryImageBox = styled.div`
-  width: 450px;
+  width: 60%;
   height: 100%;
-  padding: 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+ 
 `;
 
 const SummaryImage = styled.img`
-  width: 400px;
+  width: 90%;
   height: 90%;
+  
 `;
 
 const SummaryTextBox = styled.div`
-  width: 450px;
-  padding: 20px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width: 30%;
 `;
 
 const TextBox = styled.div`
-  padding-left: 20px;
-  padding-top: 15px;
+  width: 100%;
+  margin-top:1.5vh;
+  margin-bottom:1.5vh;
 `;
 
 const TextCombine = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
-  padding: 10px 0px 10px 0px;
+  margin-top: 2vh;
 `;
 
 const SmallText = styled.div`
@@ -43,10 +51,11 @@ const SmallText = styled.div`
   opacity: 0.6;
 `;
 
+
+
 const BigText = styled.div`
-  font-size: 32px;
-  font-weight: bold;
-  padding-right: 7px;
+  font-size: 3rem;
+  margin-right:0.5vw;
 `;
 
 function DetailPageSummary() {

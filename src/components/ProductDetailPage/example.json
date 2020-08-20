@@ -1,18 +1,18 @@
 {
     "funding": {
       "id": 1,
-      "sellerName": "yujo",
-      "fundName": "Wendy_Mirror",
+      "sellerName": "sean(Seller)",
+      "fundName": "Wendy_Mirror(goods name)",
       "price": "123,000",
       "targetAmount": 100,
       "salesAmount": 1500,
       "startDate": "2020-08-10T00:00:00+09:00",
       "endDate": "2020-08-12T00:00:00+09:00",
-      "artistName": "BTS",
+      "artistName": "artist Name",
       "achievementRate": 300,
       "dDay": 2,
-      "fundingImgUrls": "http://image.yes24.com/goods/59190821/800x0",
-      "detailedImgUrl": "http://image.yes24.com/momo/TopCate1800/MidCate001/179903035.jpg"
+      "fundingImgUrls": "https://vlee.kr/wp-content/uploads/2020/03/%EC%95%84%EC%9D%B4%EC%9C%A0_01_5120-2048x1152.jpg",
+      "detailedImgUrl": "http://file3.instiz.net/data/file3/2018/01/31/6/c/f/6cf544c9adce51443d50013f636b2639.jpg"
     },
     "msg": "get funding"
   }
