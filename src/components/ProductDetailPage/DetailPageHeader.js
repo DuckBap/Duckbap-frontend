@@ -5,8 +5,6 @@ import example from './example.json';
 const MainBox = styled.div`
   width: 100vw;
   height: 10vh;
-  //   background: yellow;
-  //   border: 5px solid red;
 `;
 
 const HeaderBox = styled.div`
@@ -19,7 +17,9 @@ const HeaderTitle = styled.span`
   font-weight: bold;
   font-size: 2rem;
   opacity: 0.8;
-  padding: 20px 0px 15px 0px;
+  height:5vh;
+  line-height:5vh;
+  padding-top:1vh;
 `;
 
 const HeaderSeller = styled.span`
