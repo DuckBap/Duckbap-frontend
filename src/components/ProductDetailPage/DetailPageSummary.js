@@ -5,7 +5,6 @@ import example from './example.json'
 const SummaryBox = styled.div`
   width: 100vw;
   height: 70vh;
-  background: #f6f5f5;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -18,7 +17,6 @@ const SummaryImageBox = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
-  background:yellow;
  
 `;
 
@@ -30,20 +28,22 @@ const SummaryImage = styled.img`
 
 const SummaryTextBox = styled.div`
   display:flex;
-  flex-direction:column;
-  flex-wrap:no-wrap;
-  justify-content:center;
-  width: 30wh;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width: 30%;
 `;
 
 const TextBox = styled.div`
-
+  width: 100%;
+  margin-top:1.5vh;
+  margin-bottom:1.5vh;
 `;
 
 const TextCombine = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
+  margin-top: 2vh;
 `;
 
 const SmallText = styled.div`
@@ -51,9 +51,11 @@ const SmallText = styled.div`
   opacity: 0.6;
 `;
 
+
+
 const BigText = styled.div`
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 3rem;
+  margin-right:0.5vw;
 `;
 
 function DetailPageSummary() {

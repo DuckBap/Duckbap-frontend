@@ -7,7 +7,6 @@ import DetailPageMain from './DetailPageMain';
 const MainBox = styled.div`
   width: 100vw;
   height: 100vh;
-  background: #f0f0f0;
   // border: 5px solid red;
 `;
 
