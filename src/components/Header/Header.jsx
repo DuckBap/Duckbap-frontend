@@ -1,4 +1,5 @@
 import React from 'react';
+//import { Link } from 'react-router-dom';
 import { Headerstyle,
   ToggleButton,
   Logostyle,
@@ -17,7 +18,7 @@ function Header() {
       </Logostyle>
       <ToggleButton />
       <SearchBtn />
-      <LoginBtn />
+     <LoginBtn type="button"/>
     </Headerstyle>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ThemeProvider } from 'styled-components';
 import {
   Container,
@@ -12,10 +13,10 @@ import {
   Space,
   StyledText,
   Line,
-} from './login/global';
-import { Input } from './login/style-input';
-import validateAuth from './login/validateAuth';
-import useValidateForm from './login/useValidateForm';
+} from './global';
+import { Input } from './style-input';
+import validateAuth from './validateAuth';
+import useValidateForm from './useValidateForm';
 
 const Login = () => {
   const STATE_INIT = {

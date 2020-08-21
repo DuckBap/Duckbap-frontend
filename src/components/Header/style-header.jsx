@@ -7,7 +7,7 @@ import SearchImg from './Search.png';
 export const Logostyle = styled.div`
 	align-items: center;
 	position:absolute;
-	left:48%;
+	left:49%;
 `;
 
 export const Headerstyle = styled.div`
@@ -109,16 +109,29 @@ export const ToggleButton = () => {
   )
 }
 
+/*export const ProfileButton = () => {
+
+}*/
+
 export const SearchBtn = styled.img.attrs({
   src: SearchImg,
 })`
+align-items: center;
   position: absolute;
-  right: 4.5%;
+  right: 4%;
+  @media (max-width:1024px){
+    right: 7%;
+  }
+  @media (max-width:768px){
+    right: 8%;
+  }
 `;
 
 export const LoginBtn = styled.img.attrs({
   src: ProfileImg,
 })`
-  position: absolute;
+  cursor: pointer;
   right: 1%;
+  padding-top: 1px;
+  position: absolute;
 `;
