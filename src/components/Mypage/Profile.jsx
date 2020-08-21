@@ -11,11 +11,11 @@ import {
 
 const Profile = () => {
 	const percent = '60%';
-	const idols = ['', '', ''];
+	const idols = ['icon.png', 'icon.png', 'icon.png'];
 	return (
 		<ProfileContainer>
 			<ProfileColumn>
-				<img src="" alt="profile" />
+				<img src="icon.png" alt="profile" />
 				<div>사용자</div>
 			</ProfileColumn>
 			<ProfileColumn>
