@@ -16,33 +16,37 @@ function LoadMoreHandler(data) {
     return {style: { opacity: 0 }};
 }*/
 function MainPage() {
-
   const [jsonData, setjsonData] = useState([]);
+  const [dataNum, setdataNum] = useState(0);
   const [pagenum, setPageNum] = useState(0);
+  const [isLoading, setisLoading] = useState(true);
   const arrayForHoldingPosts = [];
   const elem = useRef();
   
   async function fetchUrl(pagenum) {
-    await axios.get(`fundings/main?page=${pagenum}`/*`https://jsonplaceholder.typicode.com/comments?postId=${pagenum}`*/).then(response => {
-    const arrayForHoldingPosts=[...jsonData, ...response.data];
-    setjsonData(arrayForHoldingPosts);
-    });}
+    await axios.get(`https://prefab-imagery-286323.uc.r.appspot.com/v1/fundings/main?page=${pagenum}`/*`https://jsonplaceholder.typicode.com/comments?postId=${pagenum}`*/).then(response => {
+      const arrayForHoldingPosts=[...jsonData, ...response.data];
+      setdataNum(Object.keys(response.data).length)
+      setjsonData(arrayForHoldingPosts);
+      } 
+    );
+    setisLoading(false);
+  };
   
     useEffect(() => {
       fetchUrl(pagenum);
       console.log(pagenum);
-      console.log(arrayForHoldingPosts);
-      console.log(Object.keys(jsonData).length);
-      if (pagenum > 1 && Object.keys(jsonData).length < 8)
+      console.log(jsonData);
+      console.log(dataNum);
+      if (pagenum > 1 && dataNum < 8)
       {
         const { current } = elem;
         current.style.display = 'none';
       }
     }, [pagenum]);
 
-
     useEffect(() => {
-      setPageNum(pagenum + 1);
+      fetchUrl(1);
     }, []);
 
   //  <body style="margin: 0 0 0 0">
@@ -75,8 +79,8 @@ function MainPage() {
         <SortBy>주목할 만한 프로젝트</SortBy>
         <GoodsColumns>
          {
-        jsonData.map((item) => (
-          <MainItemList item={item} />
+          jsonData.map((item) => (
+            <MainItemList item={item} isLoading={isLoading} />
           ))
         }
         </GoodsColumns>
