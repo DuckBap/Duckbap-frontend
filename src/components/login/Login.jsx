@@ -5,7 +5,7 @@ import Input from './style-input';
 import { Container,  Wrapper,  Signup,  theme,  StyledText1,  
   Btn,  ForgotPassword, Space,  StyledText,  Line } from './global';
 import { isValidPassword, isValidUserName } from './Validity';
-import dummy from './dummy.json'; 
+import axios from 'axios';
 
 const Login = ({ className, ...props }) => {
   const [userName, setUserName] = useState({ value: '', error: '' });
@@ -34,21 +34,31 @@ const Login = ({ className, ...props }) => {
     try {
       await (
        await fetch('https://prefab-imagery-286323.uc.r.appspot.com/v1/login')).json();
-      
-      if (error)setError('');
+      /*const users = await 
+        axios.get
+        ('https://prefab-imagery-286323.uc.r.appspot.com/v1/login')
+        const user = users.find(
+          (user) => user.userName === userName && user.password === password
+        );
+        if (user === undefined) 
+          setError('');*/
+      if (error)
+        setError('');
     } catch (err) {
-      console.error(err);
-      setError('아이디 또는 비밀번호가 올바르지 않습니다. 다시 시도해 보세요');
+        console.error(err);
+        setError('아이디 또는 비밀번호가 올바르지 않습니다. 다시 시도해 보세요');
     }
-    setLoading(false);
+      setLoading(false);
   }, [error]);
 
   const handleEmailChange = useCallback((e) => {
-    setUserName({ value: e.target.value, error: isValidUserName(e.target.value).error });
+    setUserName({ value: e.target.value, 
+      error: isValidUserName(e.target.value).error });
   }, [setUserName]);
 
   const handlePasswordChange = useCallback((e) => {
-    setPassword({ value: e.target.value, error: isValidPassword(e.target.value).error });
+    setPassword({ value: e.target.value, 
+      error: isValidPassword(e.target.value).error });
   }, [setPassword]);
 
   useEffect(() => {
@@ -101,6 +111,7 @@ const Login = ({ className, ...props }) => {
                   value="Login" color="login" disabled={disabled || loading}>
                 로그인
               </Btn>
+              {error ? <div className="error-text">{error}</div> : null}
             </form>
             <Space />
             <StyledText className="text2">
