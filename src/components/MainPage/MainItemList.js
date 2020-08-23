@@ -50,7 +50,7 @@ function useHover() {
   }
 
 
-const MainItemList = ( {item} ) => {
+const MainItemList = ( {item, isLoading} ) => {
     
     const jsonData = [
         {
@@ -187,42 +187,59 @@ getMovies();
     } */
 
     const Hover = useHover();
-    /*
+  /*
     //서버가 안 열려있을 때 사용한 디버깅용 함수입니다
-   if (item)
+    console.log(isLoading);
+
+  if (item)
     return (
       <Goods>
         <GoodsImgWrapper>
         </GoodsImgWrapper>
-        <GoodsContentWrapper>
-            <TwoItems>
-                <Item className="userName">{item.name} | &nbsp;</Item>
-                <Item className="dDay">{item.name * -1} 일 남음</Item>
-            </TwoItems>
-            <Item  {...Hover}className="name">{item.name}</Item>
-            <Item className="achievementRate">{item.name}% 달성</Item>
-        </GoodsContentWrapper>
-    </Goods>
-    );*/
+        {
+          isLoading ? (
+            <GoodsContentWrapper />
+          ) : (
+            <GoodsContentWrapper>
+                <TwoItems>
+                    <Item className="userName">{item.name} | &nbsp;</Item>
+                    <Item className="dDay">{item.name * -1} 일 남음</Item>
+                </TwoItems>
+                <Item  {...Hover}className="name">{item.name}</Item>
+                <Item className="achievementRate">{item.name}% 달성</Item>
+            </GoodsContentWrapper>
+          )
+        }
+      </Goods>
+    );
+    return(<Goods />);*/
   
 
     //  const template = jsonData.map((item, index) => (
+  if (item)
     return (
-    <Goods>
-        <GoodsImgWrapper>
-            <GoodsImg {...Hover} src={item.mainImgUrl} alt={item.name} title={item.name} />
-        </GoodsImgWrapper>
-        <GoodsContentWrapper>
-            <TwoItems>
-                <Item className="userName">{item.userName} | &nbsp;</Item>
-                <Item className="dDay">{item.dDay * -1} 일 남음</Item>
-            </TwoItems>
-            <Item className="name">{item.name}</Item>
-            <Item className="achievementRate">{item.achievementRate}% 달성</Item>
-        </GoodsContentWrapper>
-    </Goods>
+      <Goods>
+          <GoodsImgWrapper>
+              <GoodsImg {...Hover} src={item.mainImgUrl} alt={item.name} title={item.name} />
+          </GoodsImgWrapper>
+          {
+            isLoading ? (
+              <GoodsContentWrapper />
+            ) : (
+              <GoodsContentWrapper>
+                <TwoItems>
+                    <Item className="userName">{item.userName} | &nbsp;</Item>
+                    <Item className="dDay">{item.dDay * -1} 일 남음</Item>
+                </TwoItems>
+                <Item className="name">{item.name}</Item>
+                <Item className="achievementRate">{item.achievementRate}% 달성</Item>
+              </GoodsContentWrapper>
+            )
+          }
+      </Goods>
     )
-//  return template;
+    return(<Goods />);
+//  return template;*/
 }
 
 export default MainItemList;
