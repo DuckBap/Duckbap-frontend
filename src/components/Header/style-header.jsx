@@ -21,7 +21,7 @@ export const Headerstyle = styled.div`
   background-color: white;
   display: flex;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.7);
   font-size: 22px;
