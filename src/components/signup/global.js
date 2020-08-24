@@ -37,18 +37,11 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
-      font-family: "Noto Sans KR Light", Sans-serif, !important;
-`;
-
 export const Container = styled.div`
     display: flex;
     margin: 2.5rem auto;
     max-width: 25em;
     width: 90vw;
-    @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
-      font-family: "Noto Sans KR Light", Sans-serif !important;
 `;
 
 const handleColorType = color => {

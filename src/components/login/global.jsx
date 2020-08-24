@@ -41,19 +41,12 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
-      font-family: "Noto Sans KR Light", Sans-serif, !important;
-`;
-
 export const Container = styled.div`
   display: flex;
   margin: 2.5rem auto;
   max-width: 25em;
   width: 90vw;
   font-size: 10pt;
-  @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
-  font-family: 'Noto Sans KR Light', Sans-serif !important;
 `;
 
 const handleColorType = (color) => {
@@ -61,9 +54,9 @@ const handleColorType = (color) => {
     case 'facebook':
       return 'background: rgb(109, 132, 180);';
     case 'naver':
-      return 'background: rgb(30, 200, 0);';
+      return 'background: #1EC800;';
     case 'login':
-      return 'background: rgb(250, 100, 98);';
+      return 'background: #ffcf33;';
     default:
       return 'background: #ffffff;';
   }
@@ -75,6 +68,9 @@ export const Btn = styled.button`
   border-radius: 5px;
   border: 0px solid black;
   margin: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-contents: center;
   color: #ffffff;
   font-weight: 600;
   ${({ color }) => handleColorType(color)};
@@ -88,36 +84,52 @@ export const Btn = styled.button`
   }
 `;
 
+export const BtnContents = styled.div`
+  height : 40%;
+  margin: auto;
+  text-align: center;
+`;
+
+export const Icon = styled.img`
+  height : 100%;
+  margin-right: 10px;
+`;
+
 export const ErrorText = styled.p`
-  margin: 0 5px 0;
+  margin: 2px 5px 2px;
   padding: 0;
   color: #ff3434;
   font-size: 12px;
-  text-align: left;
+  text-align: center;
 `;
 
 export const Signup = styled.a`
   font-size: 13px;
-  color: rgb(230, 160, 120);
+  color: #ffb61a;
+  // color: rgb(230, 160, 120);
   text-decoration: none;
   text-align: right;
-  text-decoration: underline;
+  text-decoration: none;
 `;
 
 export const ForgotPassword = styled.a`
   font-size: 14px;
-  color: rgb(230, 160, 120);
+  color: rgb(188, 188, 188);
+  // color: rgb(230, 120, 120);
   text-decoration: none;
   text-align: right;
   text-align: center;
   text-decoration: none;
   margin-left: 7px;
-  margin-top: 15px;
+  margin-top: 12px;
+  &:hover{
+    text-decoration: underline;
+  }
 `;
 
 export const StyledText = styled.div`
   font-size: 12px;
-  text-align: left;
+  text-align: center;
   text-decoration: none;
   margin-left: 7px;
 `;
@@ -127,6 +139,10 @@ export const StyledText1 = styled.div`
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
+
+  &.text1 {
+    width: 80px;
+  }
 `;
 
 export const Space = styled.div`
@@ -139,4 +155,15 @@ export const Line = styled.div`
   border-bottom: 0.3px solid #f2f2f2;
   margin-top: 13px;
   width: 100%;
+  &.orline{
+    margin-top: 0px;
+  }
+`;
+
+export const OrContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-contents: center;
+  align-items: center;
 `;

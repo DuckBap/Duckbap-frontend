@@ -1,22 +1,25 @@
-import React, { Component } from 'react';
-import { ThemeProvider } from "styled-components";
+import React from 'react';
 import {
-    ContractList, ContractObject, BottomContainer,   
-} from './signup/style-contract';
+  ContractList, ContractObject, BottomContainer, ContractWrapper,
+} from './style-contract';
 
-class Contract extends Component {
-    render() {
-        return (
-            <BottomContainer>
-                <ContractList>
-                    <ContractObject>이용약관</ContractObject>
-                    <ContractObject>개인정보</ContractObject>
-                    <ContractObject>수수료 정책</ContractObject>
-                    <ContractObject>Contact Us</ContractObject>
-                </ContractList>
-            </BottomContainer>
-        );
-    }
+export default function Contract() {
+  return (
+    <BottomContainer>
+      <ContractWrapper>
+        <ContractList>
+          <ContractObject>이용약관</ContractObject>
+          <ContractObject>개인정보</ContractObject>
+          <ContractObject>수수료 정책</ContractObject>
+          <ContractObject>Contact Us</ContractObject>
+        </ContractList>
+        <ContractList>
+          <ContractObject>이용약관</ContractObject>
+          <ContractObject>개인정보</ContractObject>
+          <ContractObject>수수료 정책</ContractObject>
+          <ContractObject>Contact Us</ContractObject>
+        </ContractList>
+      </ContractWrapper>
+    </BottomContainer>
+  );
 }
-
-export default Contract;

@@ -1,14 +1,20 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 export const BottomContainer = styled.div`
     width : 100%;
     border-top: 1px solid #f0f0f0;
-    padding-left : 100px;
+`;
+
+export const ContractWrapper = styled.div`
+    width : 1200px;
+    margin: 0px auto;
+    display:flex;
+    flex-flow: row;
 `;
 
 export const ContractList = styled.div`
     padding-top : 50px;
-    width : 40%;
+    width : 20%;
     display: flex;
     flex-flow : column;
     align-items: center;

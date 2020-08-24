@@ -12,10 +12,14 @@ import {
   Space,
   StyledText,
   Line,
+  OrContainer,
+  Icon,
+  BtnContents,
 } from './login/global';
 import { Input } from './login/style-input';
 import validateAuth from './login/validateAuth';
 import useValidateForm from './login/useValidateForm';
+import Contract from './signup/Contract';
 
 const Login = () => {
   const STATE_INIT = {
@@ -31,17 +35,28 @@ const Login = () => {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container>
-        <Wrapper>
+    <>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <Wrapper>
             <Btn className="login-facebook" color="facebook" onClick={onFacebookBtn}>
-              페이스북 계정으로 로그인하기
+              <BtnContents>
+                <Icon src="naver.png" alt="naver" />
+                페이스북으로 로그인
+              </BtnContents>
             </Btn>
             <Btn className="login-naver" color="naver" onClick={onNaverBtn}>
-              네이버 계정으로 로그인하기
+              <BtnContents>
+                <Icon src="naver.png" alt="naver" />
+                네이버 계정으로 로그인하기
+              </BtnContents>
             </Btn>
-            <form onSubmit={handleSubmit}> 
-              <StyledText1 className="text1">또는</StyledText1>
+            <form onSubmit={handleSubmit}>
+              <OrContainer>
+                <Line className="orline" />
+                <StyledText1 className="text1">또는</StyledText1>
+                <Line className="orline" />
+              </OrContainer>
               <div className="email-input">
                 <Input
                   type="text"
@@ -53,7 +68,7 @@ const Login = () => {
                   autoComplete="off"
                   value={values.email}
                 />
-              {errors.email && <ErrorText>{errors.email}</ErrorText>}
+                {errors.email && <ErrorText>{errors.email}</ErrorText>}
               </div>
               <div className="password-input">
                 <Input
@@ -66,10 +81,14 @@ const Login = () => {
                   autoComplete="off"
                   value={values.password}
                 />
-              {errors.password && <ErrorText>{errors.password}</ErrorText>}
+                {errors.password && <ErrorText>{errors.password}</ErrorText>}
               </div>
               <Space />
-              <Btn type="submit" className="login" color="login" /* onClick={handleSubmit} */ disabled={isSubmitted}>로그인</Btn>
+              <Btn type="submit" className="login" color="login" /* onClick={handleSubmit} */ disabled={isSubmitted}>
+                <BtnContents>
+                  로그인
+                </BtnContents>
+              </Btn>
             </form>
             <Space />
             <StyledText className="text2">
@@ -92,9 +111,11 @@ const Login = () => {
                 </ForgotPassword>
               </StyledText>
             </div>
-        </Wrapper>
-      </Container>
-    </ThemeProvider>
+          </Wrapper>
+        </Container>
+        <Contract />
+      </ThemeProvider>
+    </>
   );
 };
 
