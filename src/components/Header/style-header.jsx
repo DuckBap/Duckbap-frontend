@@ -45,6 +45,9 @@ const Menu = styled.div`
   padding-top: 0rem;
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
