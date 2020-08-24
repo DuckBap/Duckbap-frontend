@@ -3,8 +3,10 @@ import EnterListItem from './EnterListItem';
 //import { EnterpriseLists, EnterpriseListHeader } from './style-enterpriseList.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { EnterpriseLists, EnterpriseListHeader } from './style-idolList.js';
-
+import { EnterpriseLists, 
+  EnterpriseListHeader, 
+  IdolListWrapper,  } 
+from './style';
 
 export default function EnterpriseList() {
   let listOf10 = [
@@ -21,6 +23,7 @@ export default function EnterpriseList() {
   ];
   return (
     <>
+    <IdolListWrapper>
       <EnterpriseListHeader>
         <span>프로젝트 둘러보기</span>
         <FontAwesomeIcon className="enterprise-list-header-icon" icon={faWindowClose} />
@@ -32,6 +35,7 @@ export default function EnterpriseList() {
         })}
         <EnterListItem enterprise={{ name: '기타', imgUrl: null }} />
       </EnterpriseLists>
+      </IdolListWrapper>
     </>
   );
 }

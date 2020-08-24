@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from "styled-components";
 import {
     Container, Wrapper, theme,
-} from './signup/global'
+} from './global'
 import {
     Button, Input, SignupTable, SignupTableSubTitle
-} from '../signup/style-signup'
+} from './style-signup'
 import Contract from './Contract';
 import axios from 'axios';
 import Select from 'react-select';

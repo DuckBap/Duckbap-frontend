@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from "styled-components";
 import {
-    ContractList, ContractObject, BottomContainer,   
-} from './signup/style-contract';
+    ContractList, ContractObject, BottomContainer,
+} from './style-contract';
 
 class Contract extends Component {
     render() {

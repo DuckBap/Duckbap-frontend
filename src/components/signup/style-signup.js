@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { handleColorType } from './global'
 
 export const Button = styled.button`
     width:100%;
@@ -8,13 +8,13 @@ export const Button = styled.button`
     border: 0px solid black;
     margin: 0.3rem;
     color: #ffffff;
-    font-weight: 600; 
+    font-weight: 600;
     ${({ color }) => handleColorType(color)};
     cursor:pointer;
     &:focus {
       box-shadow : 0 0 5px rgba(0,0,0,0.04);
     }
-`; 
+`;
 
 export const SignupTable = styled.div`
     width: 100%;

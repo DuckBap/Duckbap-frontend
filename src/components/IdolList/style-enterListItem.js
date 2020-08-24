@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+/*
 import EnterListItem from './EnterListItem';
 
 //엔터리스트아이템'즈'
@@ -25,3 +26,5 @@ export const EnterListItems = styled.div`
     font-size: 18px;
   }
 `;
+
+*/

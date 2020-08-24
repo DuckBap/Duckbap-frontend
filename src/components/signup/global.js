@@ -21,7 +21,7 @@ export const theme = {
 
 export const Wrapper = styled.div`
   width:150vw;
-  padding:50px 50px; 
+  padding:50px 50px;
   margin-top : 20px;
   border-radius: 40px;
   display: flex;
@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
   border : 1px solid rgb(230, 230, 230);
   box-shadow : 0 0 5px rgba(0,0,0,0.04);
   border-radius: 5px;
- 
+
   @media (min-width: 768px) {
     max-width: 400px;
     box-sizing:border-box;
@@ -51,7 +51,7 @@ export const Container = styled.div`
       font-family: "Noto Sans KR Light", Sans-serif !important;
 `;
 
-const handleColorType = color => {
+export const handleColorType = color => {
   switch (color) {
     case "facebook" :
       return "background: rgb(109, 132, 180);";
@@ -71,13 +71,13 @@ export const Btn = styled.button`
     border: 0px solid black;
     margin: 0.3rem;
     color: #ffffff;
-    font-weight: 600; 
+    font-weight: 600;
     ${({ color }) => handleColorType(color)};
     cursor:pointer;
     &:focus {
       box-shadow : 0 0 5px rgba(0,0,0,0.04);
     }
-`; 
+`;
 
 // export const Signup = styled(Link)`
 //   font-size : 13px;
@@ -102,7 +102,7 @@ export const ForgotPassword = styled(Link)`
 `;
 
 export const StyledText = styled.div`
-  font-size: 13px; 
+  font-size: 13px;
   text-align: left;
   text-decoration: none;
   margin-left: 7px;
