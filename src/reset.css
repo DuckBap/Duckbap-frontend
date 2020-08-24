@@ -125,4 +125,5 @@ table {
 
 body {
   font-family: 'Nanum Gothic', sans-serif;
+  user-select: none;
 }

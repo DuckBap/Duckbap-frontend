@@ -122,5 +122,6 @@ export const LoginBtn = styled.img.attrs({
 })`
   cursor: pointer;
   position: absolute;
+  -webkit-user-drag: none;
   right: 1%;
 `;
