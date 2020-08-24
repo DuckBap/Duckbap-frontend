@@ -5,19 +5,20 @@ import IdolList from './IdolList';
 //import { EnterListItems } from './style-enterListItem.js';
 import { EnterListItems } from './style';
 
-
-export default function EnterListItem({ enterprise }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function EnterListItem({ enterprise, setOpen }) {
+  const [isListOpen, setListOpen] = useState(false);
 
   return (
-    <EnterListItems onClick={() => setIsOpen((isOpen) => !isOpen)}>
-      {/* {enterprise.imgUrl && (
+    <>
+      <EnterListItems onClick={() => setListOpen((isListOpen) => !isListOpen)}>
+        {/* {enterprise.imgUrl && (
 				<img className="enter-logo" src={enterprise.imgUrl} alt={enterprise.name} />
 			)} */}
-      <span>{enterprise.name} </span>
-      {isOpen && <FontAwesomeIcon className="sort-up-btn" icon={faSortUp} />}
-      {!isOpen && <FontAwesomeIcon className="sort-down-btn" icon={faSortDown} />}
-      {isOpen && <IdolList />}
-    </EnterListItems>
+        <span>{enterprise.name} </span>
+        {isListOpen && <FontAwesomeIcon className="sort-up-btn" icon={faSortUp} />}
+        {!isListOpen && <FontAwesomeIcon className="sort-down-btn" icon={faSortDown} />}
+      </EnterListItems>
+      {isListOpen && <IdolList setOpen={setOpen} />}
+    </>
   );
 }

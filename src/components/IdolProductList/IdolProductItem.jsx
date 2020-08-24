@@ -2,14 +2,25 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import {
-  IdolProductItems, ProductImgContainer, ProductImg,
-  TextContainer, FundingHeader, Span, HorizontalLine,
-  AchievementRateBar, FundingStatus,
+  IdolProductItems,
+  ProductImgContainer,
+  ProductImg,
+  TextContainer,
+  FundingHeader,
+  Span,
+  HorizontalLine,
+  AchievementRateBar,
+  FundingStatus,
 } from './style-idolProductItem';
+import { withRouter } from 'react-router-dom';
 
-export default function IdolProductItem({ item }) {
+function IdolProductItem({ item, history }) {
+  const goToProductDetail = () => {
+    history.push('/product');
+  };
+
   return (
-    <IdolProductItems>
+    <IdolProductItems onClick={goToProductDetail}>
       <ProductImgContainer>
         <ProductImg src={item.mainImgUrl} alt={item.fundingName} />
       </ProductImgContainer>
@@ -27,20 +38,16 @@ export default function IdolProductItem({ item }) {
         <FundingStatus>
           <Span className="achievement-rate">
             달성율
-            <Span className="achievement-rate-value">
-              {item.achievementRate}
-              %
-            </Span>
+            <Span className="achievement-rate-value">{item.achievementRate}%</Span>
           </Span>
           <Span className="d-day">
             <FontAwesomeIcon icon={faClock} />
-            <Span>
-              {item.dDay}
-              일 남음
-            </Span>
+            <Span>{item.dDay}일 남음</Span>
           </Span>
         </FundingStatus>
       </TextContainer>
     </IdolProductItems>
   );
 }
+
+export default withRouter(IdolProductItem);

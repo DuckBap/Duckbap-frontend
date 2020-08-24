@@ -9,7 +9,6 @@
   bottom: 50% !important;
 }
 
-.slick-dots li button:before
-{
-  color:orange !important;
+.slick-dots li button:before {
+  color: orange !important;
 }

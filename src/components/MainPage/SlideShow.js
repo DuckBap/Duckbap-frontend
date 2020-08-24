@@ -6,9 +6,9 @@ import './SlideShow.css'; // 이걸 해주는 이유는 슬라이드 쇼 버튼�
 import React from 'react';
 import styled from 'styled-components';
 import { SliderWrapper } from './style-slide';
+import { withRouter, Link } from 'react-router-dom';
 
-
-const SlideShow = () => {
+const SlideShow = ({ history }) => {
   const sampleData = [
     {
       imgSrc: 'https://best-wallpaper.net/wallpaper/m/1611/Doll-toy-girl-hat_m.webp',
@@ -44,20 +44,28 @@ const SlideShow = () => {
           opacity: '100%',
         }}
       >
-        <ul style={{ margin: '0px'}}>{dots} </ul>
+        <ul style={{ margin: '0px' }}>{dots} </ul>
       </div>
     ),
+  };
+
+  const goToProductDetail = () => {
+    history.push('/product');
   };
 
   return (
     <SliderWrapper>
       <Slider {...settings}>
         {sampleData.map((data) => {
-          return <Slide imgSrc={data.imgSrc} name={data.name} />;
+          return (
+            <Link to={'/product'}>
+              <Slide imgSrc={data.imgSrc} name={data.name} onClick={() => goToProductDetail()} />
+            </Link>
+          );
         })}
       </Slider>
     </SliderWrapper>
   );
 };
 
-export default SlideShow;
+export default withRouter(SlideShow);

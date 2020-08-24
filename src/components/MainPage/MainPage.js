@@ -1,10 +1,10 @@
 //import React from 'react';
 import SlideShow from './SlideShow';
 import MainItemList from './MainItemList';
-import React, {useRef, useEffect, useState} from "react";
-import axios from "axios";
+import React, { useRef, useEffect, useState } from 'react';
+import axios from 'axios';
 //import styled from 'styled-components';
-import { GoodsColumns, Root, Wrapper,SortBy, LoadMore } from './style-mainpage';
+import { GoodsColumns, Root, Wrapper, SortBy, LoadMore } from './style-mainpage';
 /*
 
 const useLoadMore = (index) => {
@@ -22,55 +22,35 @@ function MainPage() {
   const [isLoading, setisLoading] = useState(true);
   const arrayForHoldingPosts = [];
   const elem = useRef();
-  
+
   async function fetchUrl(pagenum) {
-    await axios.get(`https://prefab-imagery-286323.uc.r.appspot.com/v1/fundings/main?page=${pagenum}`/*`https://jsonplaceholder.typicode.com/comments?postId=${pagenum}`*/).then(response => {
-      const arrayForHoldingPosts=[...jsonData, ...response.data];
-      setdataNum(Object.keys(response.data).length)
-      setjsonData(arrayForHoldingPosts);
-      } 
-    );
+    await axios
+      .get(
+        // `https://prefab-imagery-286323.uc.r.appspot.com/v1/fundings/main?page=${pagenum}`
+        `https://jsonplaceholder.typicode.com/comments?postId=${pagenum}`
+      )
+      .then((response) => {
+        const arrayForHoldingPosts = [...jsonData, ...response.data];
+        setdataNum(Object.keys(response.data).length);
+        setjsonData(arrayForHoldingPosts);
+      });
     setisLoading(false);
-  };
-  
-    useEffect(() => {
-      fetchUrl(pagenum);
-      console.log(pagenum);
-      console.log(jsonData);
-      console.log(dataNum);
-      if (pagenum > 1 && dataNum < 8)
-      {
-        const { current } = elem;
-        current.style.display = 'none';
-      }
-    }, [pagenum]);
+  }
 
-    useEffect(() => {
-      fetchUrl(1);
-    }, []);
+  useEffect(() => {
+    fetchUrl(pagenum);
+    console.log(pagenum);
+    console.log(jsonData);
+    console.log(dataNum);
+    if (pagenum > 1 && dataNum < 8) {
+      const { current } = elem;
+      current.style.display = 'none';
+    }
+  }, [pagenum]);
 
-  //  <body style="margin: 0 0 0 0">
-
-  /*
-  return (
-    <Root>
-      <Header>This is Header</Header>
-      <SlideShow />
-      <SortBy>주목할 만한 프로젝트</SortBy>
-      <GoodsColumns>
-        <MainItemList />
-      </GoodsColumns>
-      <LoadMore>더 많은 굿즈 보기</LoadMore>
-      <br />
-      <SortBy>성공임박</SortBy>
-      <GoodsColumns>
-        <MainItemList />
-      </GoodsColumns>
-      <div style={{ textAlign: 'center', marginTop: '10%' }}>
-        <a href="#"></a>
-      </div>
-    </Root>
-  );*/
+  useEffect(() => {
+    fetchUrl(1);
+  }, []);
 
   return (
     <Root>
@@ -78,17 +58,17 @@ function MainPage() {
       <Wrapper>
         <SortBy>주목할 만한 프로젝트</SortBy>
         <GoodsColumns>
-         {
-          jsonData.map((item) => (
+          {jsonData.map((item) => (
             <MainItemList item={item} isLoading={isLoading} />
-          ))
-        }
+          ))}
         </GoodsColumns>
-        <LoadMore ref={elem} onClick = {() => setPageNum(pagenum + 1)}>더 많은 굿즈 보기</LoadMore>
+        <LoadMore ref={elem} onClick={() => setPageNum(pagenum + 1)}>
+          더 많은 굿즈 보기
+        </LoadMore>
         <br />
         <SortBy>성공임박</SortBy>
         <GoodsColumns>
-        <MainItemList />
+          <MainItemList />
         </GoodsColumns>
         <div style={{ textAlign: 'center', marginTop: '10%' }}>
           <a href="#"></a>

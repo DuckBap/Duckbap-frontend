@@ -7,15 +7,14 @@ import DetailPageMain from './DetailPageMain';
 const MainBox = styled.div`
   width: 100vw;
   height: 100vh;
-  // border: 5px solid red;
 `;
 
 const MainHeader = styled.div`
   height: 15vh;
-  background:white;
+  background: white;
   font-size: 5rem;
-  text-align:center;
-`
+  text-align: center;
+`;
 
 function DetailPage() {
   return (

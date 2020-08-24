@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 import IdolProductItem from './IdolProductItem';
 import { IdolProductLists, SortBtnContainer, SortBtn } from './style-idolProductList';
+import { withRouter } from 'react-router-dom';
 // 무한스크롤? 페이지네이션?
-export default function IdolProductList() {
+function IdolProductList({ history }) {
   const items = [
     {
       id: 1,
@@ -69,15 +70,17 @@ export default function IdolProductList() {
 
   return (
     <IdolProductLists>
-      <SortBtnContainer>
+      {/* <SortBtnContainer>
         <SortBtn>
           인기순
           <FontAwesomeIcon icon={faSortDown} />
         </SortBtn>
-      </SortBtnContainer>
+      </SortBtnContainer> */}
       {items.map((item) => (
         <IdolProductItem key={item.id} item={item} />
       ))}
     </IdolProductLists>
   );
 }
+
+export default withRouter(IdolProductList);

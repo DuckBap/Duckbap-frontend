@@ -2,6 +2,7 @@ import React, {useRef, useEffect, useState} from "react";
 import axios from "axios";
 //import styled from 'styled-components';
 import { Goods,GoodsImgWrapper, GoodsImg, Item, TwoItems, GoodsContentWrapper } from './style-itemlist';
+import { withRouter } from "react-router-dom";
 
 
 /*
@@ -18,7 +19,7 @@ function useFetch(url) {
   return [data];
 }*/
 
-function useHover() {  
+function useHover() {
     const ref = useRef();
     const handleMouseOver = () => {
         const { current } = ref;
@@ -31,13 +32,13 @@ function useHover() {
         current.style.transform = `scale(1)`;
         current.style.transition = "all 0.5s";
     };
-  
+
     useEffect(() => {
         const node = ref.current;
         if (node) {
           node.addEventListener('mouseover', handleMouseOver);
           node.addEventListener('mouseout', handleMouseOut);
-  
+
           return () => {
             node.removeEventListener('mouseover', handleMouseOver);
             node.removeEventListener('mouseout', handleMouseOut);
@@ -45,14 +46,15 @@ function useHover() {
         }
       }, (ref.current)
     );
-  
+
     return { ref};
   }
 
 
-const MainItemList = ( {item, isLoading} ) => {
-    
-    const jsonData = [
+// const MainItemList = ( {item, isLoading} ) => {
+const MainItemList = ( { isLoading, history } ) => {
+
+    const item = [
         {
           id: 0,
           userName: "반지수",
@@ -87,7 +89,7 @@ const MainItemList = ( {item, isLoading} ) => {
         achievementRate: 32,
         mainImgUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/American_Eskimo_Dog.jpg/1527px-American_Eskimo_Dog.jpg",
-        }, 
+        },
         {
             id: 3,
             userName: "최강훈",
@@ -135,104 +137,32 @@ const MainItemList = ( {item, isLoading} ) => {
         },
     ];
 
-/*
-
-
-    
-    const [movies, setmovies] = useState();
-    const getMovies = async () => {
-    
-        var temp = await axios.get(
-        "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
-        );
-        setmovies(temp);
-        console.log(movies);
-
-    };
-    getMovies();
-    // list-style-type 은 ul태그의 점을 관리.
-  */
-
-
- /*
-  const [movies, setmovies] = useState();
-
-  const getMovies = async () => {
-    const {
-      data: {
-        data: { movies }
-      }
-    } = await axios.get(
-      "https://yts-proxy.now.sh/list_movies.json" 
-    );
-    setmovies(movies);
-}
-getMovies();
- // 콘솔로그용
-  useEffect(
-    () => {
-      console.log(movies);
-    },
-    [movies]
-  );
-
-
-    const ajaxJson = async () => {
-     var oReq = new XMLHttpRequest();
-      await oReq.open("GET", "https://yts-proxy.now.sh/list_movies.json");
-      oReq.addEventListener("load", function(){
-
-      })
-      oReq.send();
-    } */
 
     const Hover = useHover();
-  /*
-    //서버가 안 열려있을 때 사용한 디버깅용 함수입니다
-    console.log(isLoading);
 
-  if (item)
-    return (
-      <Goods>
-        <GoodsImgWrapper>
-        </GoodsImgWrapper>
-        {
-          isLoading ? (
-            <GoodsContentWrapper />
-          ) : (
-            <GoodsContentWrapper>
-                <TwoItems>
-                    <Item className="userName">{item.name} | &nbsp;</Item>
-                    <Item className="dDay">{item.name * -1} 일 남음</Item>
-                </TwoItems>
-                <Item  {...Hover}className="name">{item.name}</Item>
-                <Item className="achievementRate">{item.name}% 달성</Item>
-            </GoodsContentWrapper>
-          )
-        }
-      </Goods>
-    );
-    return(<Goods />);*/
-  
+  const goToProductDetail = () => {
+    history.push('/product')
+  }
+
 
     //  const template = jsonData.map((item, index) => (
   if (item)
     return (
-      <Goods>
+      <Goods onClick={goToProductDetail}>
           <GoodsImgWrapper>
-              <GoodsImg {...Hover} src={item.mainImgUrl} alt={item.name} title={item.name} />
+              <GoodsImg {...Hover} src={item.mainImgUrl || 'iu.jpeg'} alt={item.name || 'no alt'} title={item.name || 'no title'} />
           </GoodsImgWrapper>
           {
-            isLoading ? (
-              <GoodsContentWrapper />
-            ) : (
-              <GoodsContentWrapper>
+            isLoading ?
+            ( <GoodsContentWrapper /> )
+            : (
+              <GoodsContentWrapper >
                 <TwoItems>
-                    <Item className="userName">{item.userName} | &nbsp;</Item>
-                    <Item className="dDay">{item.dDay * -1} 일 남음</Item>
+                    <Item className="userName">{item.userName || 'no username'} | &nbsp;</Item>
+                    <Item className="dDay">{item.dDay * -1 || 'no dDay'} 일 남음</Item>
                 </TwoItems>
-                <Item className="name">{item.name}</Item>
-                <Item className="achievementRate">{item.achievementRate}% 달성</Item>
+                <Item className="name">{item.name || 'no name'}</Item>
+                <Item className="achievementRate">{item.achievementRate || '999'}% 달성</Item>
               </GoodsContentWrapper>
             )
           }
@@ -242,7 +172,7 @@ getMovies();
 //  return template;*/
 }
 
-export default MainItemList;
+export default withRouter(MainItemList);
 
 
 
