@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export  const SliderWrapper = styled.div`
+export const SliderWrapper = styled.div`
   overflow: hidden;
   display: block;
   width: 100%;
@@ -29,7 +29,7 @@ export const SlideImgText = styled.div`
   font-size: 50px;
   max-width: 25vw;
   font-weight: 400;
-  word-break:keep-all;
+  word-break: keep-all;
 `;
 
 export const SlideImgLeft = styled.div`

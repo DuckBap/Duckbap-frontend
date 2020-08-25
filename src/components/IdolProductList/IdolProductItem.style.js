@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export const IdoListContainer = styled.div`
-
-`;
+export const IdoListContainer = styled.div``;
 export const IdolProductItems = styled.div`
   display: flex;
   width: 96%;
@@ -99,39 +97,40 @@ export const Span = styled.span`
 `;
 
 export const AchievementRateBar = styled.div`
-    position: relative;
-    height: 4px;
-    margin-bottom: 30px;
+  position: relative;
+  height: 4px;
+  margin-bottom: 30px;
 
-    &.foreground {
+  &.foreground {
     background: #ffb61a;
     position: absolute;
     height: 100%;
     z-index: 2;
     width: 60%;
-    }
+  }
 
-    &.background {
+  &.background {
     background: rgb(206, 206, 206);
     position: absolute;
     z-index: 1;
     height: 100%;
     width: 100%;
+  }
 `;
 
 export const HorizontalLine = styled.div`
-    height: 1px;
-    width: 80px;
-    margin: 14px 0 20px;
-    background: rgb(206, 206, 206);
+  height: 1px;
+  width: 80px;
+  margin: 14px 0 20px;
+  background: rgb(206, 206, 206);
 `;
 
 export const FundingHeader = styled.div`
-    min-width: 1000px;
+  min-width: 1000px;
 `;
 
-export const FundingStatus = styled.div`  
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+export const FundingStatus = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 `;

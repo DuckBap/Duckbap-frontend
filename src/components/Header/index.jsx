@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Headerstyle, ToggleButton, Logostyle, SearchBtn, LoginBtn } from './style-header';
+import { Headerstyle, ToggleButton, Logostyle, SearchBtn, LoginBtn } from './header.style';
 import { withRouter } from 'react-router-dom';
 
 function Header({ history }) {

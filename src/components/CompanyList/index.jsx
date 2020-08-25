@@ -1,12 +1,9 @@
 import React from 'react';
 import EnterListItem from './EnterListItem';
-//import { EnterpriseLists, EnterpriseListHeader } from './style-enterpriseList.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { EnterpriseLists, EnterpriseListHeader, IdolListWrapper } from './style';
+import { EnterpriseLists, EnterpriseListHeader, IdolListWrapper } from './common.style';
 import { withRouter } from 'react-router-dom';
 
-function EnterpriseList({ history, setOpen }) {
+function EnterList({ history, setOpen }) {
   let listOf10 = [
     { name: 'SM Entertainment', imgUrl: 'sm.png' },
     { name: 'JYP Enterteinment', imgUrl: 'sm.png' },
@@ -40,4 +37,4 @@ function EnterpriseList({ history, setOpen }) {
   );
 }
 
-export default withRouter(EnterpriseList);
+export default withRouter(EnterList);

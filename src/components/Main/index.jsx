@@ -4,7 +4,7 @@ import MainItemList from './MainItemList';
 import React, { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
 //import styled from 'styled-components';
-import { GoodsColumns, Root, Wrapper, SortBy, LoadMore } from './style-mainpage';
+import { GoodsColumns, Root, Wrapper, SortBy, LoadMore } from './index.style';
 /*
 
 const useLoadMore = (index) => {

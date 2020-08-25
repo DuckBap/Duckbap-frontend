@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import IdolList from './IdolList';
-//import { EnterListItems } from './style-enterListItem.js';
-import { EnterListItems } from './style';
+import { EnterListItems } from './common.style';
 
 export default function EnterListItem({ enterprise, setOpen }) {
   const [isListOpen, setListOpen] = useState(false);

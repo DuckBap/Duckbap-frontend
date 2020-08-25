@@ -1,5 +1,5 @@
 import React from 'react';
-import { IdolLists } from './style';
+import { IdolLists } from './common.style';
 import { withRouter } from 'react-router-dom';
 
 function IdolList({ setOpen, history }) {

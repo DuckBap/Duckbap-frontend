@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import MainPage from './components/MainPage/MainPage';
+import MainPage from './components/Main';
 import Login from './components/Login';
-import Mypage from './components/Mypage/Mypage';
-import Signup from './components/signup';
-import DetailPage from './components/ProductDetailPage/DetailPage';
-import Header from './components/Header/Header';
-import IdolProductList from './components/IdolProductList/IdolProductList';
+import Mypage from './components/Mypage';
+import Signup from './components/Signup';
+import DetailPage from './components/ProductDetail';
+import Header from './components/Header';
+import IdolProductList from './components/IdolProductList';
 
 function App() {
   return (

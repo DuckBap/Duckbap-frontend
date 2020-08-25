@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 
 export const GoodsColumns = styled.div`
@@ -47,8 +46,8 @@ export const LoadMore = styled.button`
   //  box-shadow: inset 0px -9px 0px -6px #f0b282;
   background-color: #ffcf33;
   &:hover {
-	background-color: #e6b000;
-	box-shadow : 0 0 5px rgba(0,0,0,0.04);
+    background-color: #e6b000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.04);
   }
   border: 1px solid #ffffff;
   padding: 13px 61px;

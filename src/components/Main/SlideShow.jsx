@@ -2,10 +2,10 @@ import Slide from './Slide';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './SlideShow.css'; // 이걸 해주는 이유는 슬라이드 쇼 버튼이 안 보여서.
+import './SlideShow.style.css'; // 이걸 해주는 이유는 슬라이드 쇼 버튼이 안 보여서.
 import React from 'react';
 import styled from 'styled-components';
-import { SliderWrapper } from './style-slide';
+import { SliderWrapper } from './slide.style';
 import { withRouter, Link } from 'react-router-dom';
 
 const SlideShow = ({ history }) => {

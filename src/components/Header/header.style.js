@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import EnterpriseList from '../IdolList/EnterpriseList';
-import ProfileImg from './Profile.png';
-import SearchImg from './Search.png';
+import EnterList from '../CompanyList';
+
+const ProfileImg = 'Profile.png';
+const SearchImg = 'Search.png';
 
 export const Logostyle = styled.div`
   align-items: center;
@@ -57,7 +58,7 @@ const Menu = styled.div`
 export const PopupMenu = ({ open, setOpen }) => {
   return (
     <Menu open={open}>
-      <EnterpriseList setOpen={setOpen} />
+      <EnterList setOpen={setOpen} />
     </Menu>
   );
 };

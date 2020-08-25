@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 import IdolProductItem from './IdolProductItem';
-import { IdolProductLists, SortBtnContainer, SortBtn } from './style-idolProductList';
+import { IdolProductLists, SortBtnContainer, SortBtn } from './index.style';
 import { withRouter } from 'react-router-dom';
 // 무한스크롤? 페이지네이션?
 function IdolProductList({ history }) {

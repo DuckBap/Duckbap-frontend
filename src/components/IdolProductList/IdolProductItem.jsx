@@ -11,7 +11,7 @@ import {
   HorizontalLine,
   AchievementRateBar,
   FundingStatus,
-} from './style-idolProductItem';
+} from './IdolProductItem.style';
 import { withRouter } from 'react-router-dom';
 
 function IdolProductItem({ item, history }) {
