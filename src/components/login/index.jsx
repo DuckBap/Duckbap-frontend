@@ -85,14 +85,14 @@ const Login = () => {
           <Space />
           <StyledText className="text2">아직 계정이 없으신가요?</StyledText>
           <div className="registration">
-            <Signup href="/sign-up">
+            <Signup href="/signup">
               <StyledText1>덕질이 밥먹여준다 가입하기</StyledText1>
             </Signup>
           </div>
           <Line />
           <div className="forgot-password">
             <StyledText>
-              <ForgotPassword href="/sign-up">
+              <ForgotPassword href="/signup">
                 <StyledText1>혹시 비밀번호를 잊으셨나요?</StyledText1>
               </ForgotPassword>
             </StyledText>

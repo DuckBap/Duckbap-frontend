@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const BottomContainer = styled.div`
-  width: 100%;
+  max-width: 25em;
   border-top: 1px solid #f0f0f0;
   padding-left: 100px;
 `;

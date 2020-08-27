@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Select from 'react-select';
 import { ThemeProvider } from 'styled-components';
-import { Container, Wrapper, theme } from './global';
 import {
-  Button, Input, SignupTable, SignupTableSubTitle, ErrorMsg
+  Container, Wrapper, theme,
+  Button, Input, SignupTable, SignupTableSubTitle, ErrorMsg,
+  favoriteArtist, Space, Or, NaverIcon,
 } from './index.style';
 import Contract from './Contract';
 
@@ -148,13 +149,7 @@ const Signup = () => {
           <Button className="login-naver" color="naver" onClick={onNaverBtn}>
             네이버 계정으로 가입하기
           </Button>
-          <span>
-            <br />
-          </span>
-          또는
-          <span>
-            <br />
-          </span>
+          <Or>또는</Or>
           <SignupTable onSubmit={onSubmit}>
             <div className="signup-table-uername">
               <SignupTableSubTitle>사용자 이름</SignupTableSubTitle>
@@ -214,13 +209,14 @@ const Signup = () => {
             <div className="signup-table-favorite">
               <SignupTableSubTitle>가장 좋아하는 연예인</SignupTableSubTitle>
               <Select
-                placeholder="가장 좋아하는 연예인을 골라주세요"
+                placeholder="나의 최애"
                 options={options}
                 onChange={onChangeArtist}
+                styles={favoriteArtist}
               />
             </div>
-            {validError && <ErrorMsg>유효하지않은 값입니다</ErrorMsg>}
           </SignupTable>
+          <Space />
           <Button
             className="login"
             color="login"
@@ -228,8 +224,9 @@ const Signup = () => {
             htmlType="submit"
             onClick={onSignUpClick}
           >
-            다음으로
+            회원가입
           </Button>
+          {validError && <ErrorMsg>유효하지않은 값입니다</ErrorMsg>}
         </Wrapper>
       </Container>
       <Contract />
