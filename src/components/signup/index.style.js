@@ -46,3 +46,7 @@ export const Signup = styled.a`
   color: rgb(230, 160, 120);
   text-decoration: none;
 `;
+
+export const ErrorMsg = styled.div`
+  color : red;
+`;
