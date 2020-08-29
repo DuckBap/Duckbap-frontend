@@ -63,7 +63,7 @@ const handleColorType = (color) => {
     case 'naver':
       return 'background: rgb(30, 200, 0);';
     case 'login':
-      return 'background: rgb(250, 100, 98);';
+      return 'background: #ffcf33;';
     default:
       return 'background: #ffffff;';
   }
@@ -73,14 +73,15 @@ export const Btn = styled.button`
   width: 100%;
   height: 40px;
   border-radius: 5px;
-  border: 0px solid black;
+  border: none;
+  outline: none;
   margin: 0.3rem;
   color: #ffffff;
   font-weight: 600;
   ${({ color }) => handleColorType(color)};
   cursor: pointer;
-  &:focus {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.04);
+  &:hover {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.04);
   }
   &:error-input {
     border: 2px solid #ff3434;
@@ -101,7 +102,10 @@ export const Signup = styled.a`
   color: rgb(230, 160, 120);
   text-decoration: none;
   text-align: right;
-  text-decoration: underline;
+  &:hover {
+    color: rgb(245, 134, 71);
+    text-decoration: underline;
+  }
 `;
 
 export const ForgotPassword = styled.a`
@@ -113,6 +117,10 @@ export const ForgotPassword = styled.a`
   text-decoration: none;
   margin-left: 7px;
   margin-top: 15px;
+  &:hover {
+    color: rgb(245, 134, 71);
+    text-decoration: underline;
+  }
 `;
 
 export const StyledText = styled.div`
