@@ -11,18 +11,16 @@ import { withRouter, Link } from 'react-router-dom';
 const SlideShow = ({ history }) => {
   const sampleData = [
     {
-      imgSrc: 'https://best-wallpaper.net/wallpaper/m/1611/Doll-toy-girl-hat_m.webp',
-      name: '나만의 DIL 인형',
+      imgSrc: 'noImg.png',
+      name: 'no data',
     },
     {
-      imgSrc:
-        'https://previews.123rf.com/images/milkos/milkos1810/milkos181000795/110883591-healthy-food-panorama-background-.jpg',
-      name: 'Well-being again! 건강한 음식',
+      imgSrc: 'noImg.png',
+      name: 'no data',
     },
     {
-      imgSrc:
-        'https://p1.pxfuel.com/preview/88/831/620/white-lion-lion-lion-babies-mother-lion-black-and-white-panorama.jpg',
-      name: '갈 곳을 잃어가는 사자 무리들',
+      imgSrc: 'noImg.png',
+      name: 'no data',
     },
   ];
 

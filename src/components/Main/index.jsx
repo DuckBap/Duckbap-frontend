@@ -25,23 +25,19 @@ function MainPage() {
 
   async function fetchUrl(pagenum) {
     await axios
-      .get(
-        // `https://prefab-imagery-286323.uc.r.appspot.com/v1/fundings/main?page=${pagenum}`
-        `https://jsonplaceholder.typicode.com/comments?postId=${pagenum}`
-      )
+      .get(`https://prefab-imagery-286323.uc.r.appspot.com/v1/fundings/main?page=${pagenum}`)
       .then((response) => {
-        const arrayForHoldingPosts = [...jsonData, ...response.data];
-        setdataNum(Object.keys(response.data).length);
-        setjsonData(arrayForHoldingPosts);
+        if (response) {
+          const arrayForHoldingPosts = [...jsonData, response.data];
+          setdataNum(Object.keys(response.data).length);
+          setjsonData(arrayForHoldingPosts);
+        }
       });
     setisLoading(false);
   }
 
   useEffect(() => {
     fetchUrl(pagenum);
-    console.log(pagenum);
-    console.log(jsonData);
-    console.log(dataNum);
     if (pagenum > 1 && dataNum < 8) {
       const { current } = elem;
       current.style.display = 'none';
