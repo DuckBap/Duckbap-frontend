@@ -22,7 +22,7 @@ function Header({ history }) {
       <Logostyle>
         <img
           draggable="false"
-          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6f618edd-747e-43bc-a9cf-667c1bce61df%2Fduck.png?table=block&id=63f37a30-a74d-4979-8429-a95f8504750a&width=250&cache=v2"
+          src="logo.png"
           alt="duck"
           width="32px"
           onClick={goToMain}
