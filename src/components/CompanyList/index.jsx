@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import EnterListItem from './EnterListItem';
 import { EnterpriseLists, EnterpriseListHeader, IdolListWrapper } from './common.style';
 import { withRouter } from 'react-router-dom';
 
 function EnterList({ history, setOpen }) {
-  let listOf10 = [
-    { name: 'SM Entertainment', imgUrl: 'sm.png' },
-    { name: 'JYP Enterteinment', imgUrl: 'sm.png' },
-    { name: 'CJ ENM', imgUrl: 'sm.png' },
-    { name: 'KAKAO M', imgUrl: 'sm.png' },
-    { name: 'Big Hit Enterteinment', imgUrl: 'sm.png' },
-    { name: 'DSP Media', imgUrl: 'sm.png' },
-    { name: 'adobe emdia', imgUrl: 'sm.png' },
-    { name: 'coca cola entertainment', imgUrl: 'sm.png' },
-    { name: 'toto Entertainment', imgUrl: 'sm.png' },
-    { name: 'bobo Entertainment', imgUrl: 'sm.png' },
-  ];
+  const [listOf10, setlistOf10] = useState([]);
+  const [others, setothers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let res = await fetch('https://prefab-imagery-286323.uc.r.appspot.com/v1/ents');
+      res = await res.json();
+      setlistOf10(res.data.slice(0, 10));
+      setothers(res.data.slice(10));
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -30,8 +30,13 @@ function EnterList({ history, setOpen }) {
               <EnterListItem key={enterprise.name} enterprise={enterprise} setOpen={setOpen} />
             );
           })}
-          <EnterListItem enterprise={{ name: '기타', imgUrl: null }} setOpen={setOpen} />
+          <EnterListItem
+            enterprise={{ name: '기타', imgUrl: null }}
+            others={others}
+            setOpen={setOpen}
+          />
         </EnterpriseLists>
+        <div style={{ width: '100%', height: '200px' }} />
       </IdolListWrapper>
     </>
   );

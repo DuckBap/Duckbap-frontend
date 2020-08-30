@@ -19,7 +19,7 @@ function App() {
         <Route path={['/mypage/:username?']} component={Mypage} />
         <Route path="/signup" component={Signup} />
         <Route path="/product/:productNo?" component={DetailPage} />
-        <Route paht="/productList/:idol-name?" component={IdolProductList} />
+        <Route path="/fundings/:id" component={IdolProductList} />
       </Switch>
     </div>
   );

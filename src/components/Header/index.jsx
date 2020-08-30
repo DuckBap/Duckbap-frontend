@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Headerstyle, ToggleButton, Logostyle, SearchBtn, LoginBtn } from './index.style';
+import { Headerstyle, ToggleButton, Logostyle, LoginBtn } from './index.style';
 import { withRouter } from 'react-router-dom';
 
 function Header({ history }) {
@@ -20,13 +20,7 @@ function Header({ history }) {
   return (
     <Headerstyle open={open}>
       <Logostyle>
-        <img
-          draggable="false"
-          src="logo.png"
-          alt="duck"
-          width="32px"
-          onClick={goToMain}
-        />
+        <img draggable="false" src="logo.png" alt="duck" width="32px" onClick={goToMain} />
       </Logostyle>
       <ToggleButton open={open} setOpen={setOpen} />
       {/* <SearchBtn /> */}

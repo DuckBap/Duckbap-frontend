@@ -88,7 +88,8 @@ export const IdolLists = styled.div`
     width: 100%;
     display: flex;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
+    margin-left: 50px;
     align-items: center;
     padding: 10px 0;
     cursor: pointer;
